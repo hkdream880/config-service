@@ -1,0 +1,30 @@
+
+server:
+  port: 8888
+  
+spring:
+  application:
+    name: config-service
+  profiles:
+    active: native
+  cloud:
+    config:
+      server:
+        native:
+          search-locations: file:///Users/hk/WORKSPACE/JAVA/native-file-repo # => /Users/hk/WORKSPACE/JAVA/native-file-repo
+#        git:
+#          uri: file:///Users/hk/WORKSPACE/JAVA/git-local-repo
+#          uri: https://github.com/hkdream880/msa-config-service.git
+#          username: 
+#          password:
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: guest
+    password: guest
+    
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, busrefresh
